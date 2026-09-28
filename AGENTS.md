@@ -109,8 +109,10 @@ There's no test suite. To check a change:
      `#fff` should appear.
 3. For the homepage specifically: at common desktop heights, confirm
    `document.documentElement.scrollHeight === window.innerHeight` (the puzzle
-   must never require scrolling). On mobile widths, confirm the two-column
-   mosaic and that nothing overlaps.
+   must never require scrolling). On mobile widths (≤767px) the puzzle stacks
+   as a single column instead — confirm photo tiles hold a consistent 4:3
+   frame, colored tiles are short padding-sized banners (not squares), and
+   nothing overlaps or causes horizontal scroll.
 4. For trip pages: confirm the carousel's arrows/thumbnails/keyboard/drag all
    work, the frame color matches that destination's identity color, and dark
    mode only swaps `--bg`/`--ink` (no new colors appear).
