@@ -40,17 +40,54 @@
   </nav>
 </header>
 
-<main>
-  <section class="page-placeholder">
-    <div>
-      <h1>Contact</h1>
-      <p>Alix's display name and Instagram handle — coming soon.</p>
-    </div>
+<main class="trip">
+  <section class="contact-feature">
+    <p class="label-sm">Inquiry Details</p>
+    <h1>Photography inquiry</h1>
+    <p class="contact-feature__intro">I'm available for travel photography, and I'm happy to photograph your trip, whether that's a weekend away or something longer. If you've seen a photo on this site that you'd like to use or license, I'd love to hear from you too. Tell me a little about what you have in mind, and I'll reply within a few days.</p>
+
+    <form class="inquiry-form" action="https://formspree.io/f/xzezyega" method="POST">
+      <div class="inquiry-form__field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="inquiry-form__field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="inquiry-form__field inquiry-form__field--full">
+        <label for="inquiry-type">Inquiry type</label>
+        <select id="inquiry-type" name="inquiry_type" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Photograph my trip">Photograph my trip</option>
+          <option value="License a photo">License a photo</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="inquiry-form__field inquiry-form__field--full">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <input type="hidden" name="_subject" value="New photography inquiry">
+      <input type="hidden" name="_next" value="https://tuttijonson.github.io/alix-photo-site/thanks.html">
+
+      <button type="submit" class="inquiry-form__submit">Send inquiry</button>
+    </form>
+
+    <p class="contact-feature__direct">
+      Prefer writing directly? Email
+      <a href="mailto:hello@alixabroad.com" class="back-home">hello@alixabroad.com</a>
+      <span class="label-sm text-muted">[Replace with Alix's real email]</span>
+    </p>
   </section>
 </main>
 
 <footer>
-  <span class="label-sm text-muted">Alix Abroad</span>
+  <a href="index.html" class="back-home">Go Back to the Page</a>
 </footer>
 
 <script src="js/site.js" defer></script>

@@ -432,7 +432,130 @@ footer {
 }
 
 /* ===========================================================
-   Placeholder pages (About / Contact — filled in a future iteration)
+   Contact page — photography inquiry form. Uses the bare .trip
+   wrapper (no color modifier, no hero) for the same flex/background/
+   custom-cursor treatment as the about page, just in a centered
+   single column instead of a two-column editorial split. The
+   heading/paragraph sizes below intentionally match
+   .trip-editorial__panel h2/p so the type reads the same as Tokyo's.
+   =========================================================== */
+
+.contact-feature {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.contact-feature h1 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 6px 0 16px;
+}
+
+.contact-feature__intro {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+}
+
+.inquiry-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+  margin-top: 32px;
+}
+
+.inquiry-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inquiry-form__field--full,
+.inquiry-form__submit {
+  grid-column: 1 / -1;
+}
+
+.inquiry-form label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid rgba(23, 23, 23, 0.25);
+  border-radius: 0;
+  padding: 10px 12px;
+}
+
+.inquiry-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.inquiry-form input:focus-visible,
+.inquiry-form select:focus-visible,
+.inquiry-form textarea:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.inquiry-form__submit {
+  justify-self: start;
+  margin-top: 4px;
+  padding: 12px 28px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--ink);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.inquiry-form__submit:hover,
+.inquiry-form__submit:focus-visible {
+  opacity: 0.8;
+}
+
+.contact-feature__direct {
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.contact-feature__direct .label-sm {
+  display: block;
+  margin-top: 4px;
+}
+
+@media (max-width: 767px) {
+  .contact-feature {
+    padding: 24px 16px 48px;
+  }
+
+  .inquiry-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================================
+   Simple centered message pages (currently just thanks.html)
    =========================================================== */
 
 .page-placeholder {
