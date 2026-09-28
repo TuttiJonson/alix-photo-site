@@ -44,6 +44,7 @@ footer { flex: 0 0 auto; }
 
   --font-sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-ticker: "DotGothic16", monospace;
 
   --header-h: 76px;
 }
@@ -72,6 +73,71 @@ body { background: var(--bg); }
   font-size: 11px;
   letter-spacing: 0.18em;
   font-weight: 500;
+}
+
+/* ---------- Ticker bar: destinations marquee, above the header ----------
+   Two full-width groups, each holding every city exactly once. Both share
+   the same animation (translateX 0 -> -100%, same duration, same start
+   time), so as group 1 slides fully off-screen to the left, group 2 —
+   already sitting flush against its right edge in normal flex flow —
+   slides into the exact spot group 1 vacated, for a seamless loop with
+   no repeated names visible at once. */
+.ticker {
+  display: flex;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+.ticker-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
+  min-width: 100%;
+  padding: 6px 0;
+  font-family: var(--font-ticker);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+.ticker-group a,
+.ticker-group span {
+  /* explicit #000 per spec: ticker text stays black regardless of theme,
+     unlike the rest of the site which routes through var(--ink) — the one
+     deliberate exception to the "no hex outside :root" rule (see AGENTS.md) */
+  color: #000;
+}
+
+.ticker-group a:hover,
+.ticker-group a:focus-visible {
+  opacity: 0.55;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+.ticker:hover .ticker-group,
+.ticker:focus-within .ticker-group {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-group {
+    animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .ticker-group {
+    padding: 5px 0;
+    font-size: 11px;
+  }
 }
 
 /* ---------- Header / nav ---------- */
