@@ -385,6 +385,53 @@ footer {
 }
 
 /* ===========================================================
+   About page — reuses the trip page's own .trip / .trip-editorial /
+   .trip-slider / .trip-editorial__panel structure verbatim (so it
+   gets the same carousel mechanics, spacing, background and custom
+   cursor as Tokyo etc. for free). This modifier only changes the
+   slider/panel proportions to roughly half-and-half instead of the
+   trip pages' 70/30, reorders them on mobile, and drops the colored
+   photo border. The about page's own markup skips the thumbnail
+   strip entirely — the camera photo just sits absolutely-positioned
+   behind the active one (opacity 0, per .trip-slider__stage img
+   above) until the arrows swap it in. All scoped to
+   .trip-editorial--about so the five trip pages and their own
+   carousels (thumbnails, blue/etc. borders) are untouched.
+   =========================================================== */
+
+.trip-editorial--about .trip-slider {
+  flex: 1 1 50%;
+}
+
+.trip-editorial--about .trip-editorial__panel {
+  flex: 1 1 50%;
+  max-width: 460px;
+}
+
+.trip-editorial--about .trip-slider__stage img {
+  border: none;
+}
+
+.about-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(17px, 1.8vw, 21px);
+  line-height: 1.4;
+  margin: 28px 0 8px;
+}
+
+@media (max-width: 767px) {
+  .trip-editorial--about .trip-editorial__panel {
+    order: 0;
+    max-width: none;
+  }
+
+  .trip-editorial--about .trip-slider {
+    order: -1;
+  }
+}
+
+/* ===========================================================
    Placeholder pages (About / Contact — filled in a future iteration)
    =========================================================== */
 

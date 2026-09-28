@@ -40,17 +40,37 @@
   </nav>
 </header>
 
-<main>
-  <section class="page-placeholder">
-    <div>
-      <h1>About Me</h1>
-      <p>Alix's story, her camera, and the exchange — coming soon.</p>
+<main class="trip">
+  <section class="trip-editorial trip-editorial--about">
+    <div class="trip-slider" data-slider>
+      <div class="trip-slider__stage">
+        <img data-slide="0" src="images/about/portrait.jpg" alt="Alix smiling at sunrise on the summit of Mount Kinabalu, arm raised to the sky." class="is-active">
+        <img data-slide="1" src="images/about/camera.jpg" alt="The Olympus mju-II film camera Alix bought on a whim at a market stall abroad.">
+        <button class="trip-slider__arrow trip-slider__arrow--prev" aria-label="Previous photo">&lsaquo;</button>
+        <button class="trip-slider__arrow trip-slider__arrow--next" aria-label="Next photo">&rsaquo;</button>
+      </div>
     </div>
+    <!-- TODO: only two real photos of Alix exist in assets/raw/about right
+         now (the Kinabalu portrait + the camera). Drop 1-3 more photos of
+         her into that folder, process them with sips into images/about/,
+         then add a matching <img data-slide="n"> above to round out the
+         slideshow (thumbnails are hidden on this page, so the arrows are
+         the only way to cycle through — no extra markup needed for that). -->
+    <aside class="trip-editorial__panel">
+      <p class="label-sm">About Alix</p>
+      <h1>About Me</h1>
+      <p>Hi, I'm Alix. I found photography by accident, while I was living abroad.</p>
+      <p>One afternoon, wandering through a busy Chinese market, I spotted an old film camera sitting among the stalls. The price was small, and something about it pulled me in. I bought it on the spot, without knowing that one small purchase would change how I see the world.</p>
+      <p>That camera, an Olympus, taught me something I still hold onto: a single frame on film can hold a single moment. There's no scrolling back, no endless retakes. You look, you wait, you press the shutter, and that moment is kept.</p>
+      <p>This site is my collection of those moments from my travels. Each photo brings a place, a sound, or a stranger's smile back to me, and I'm so happy to share them with you.</p>
+      <p class="about-quote">&ldquo;One frame can hold one moment.&rdquo;</p>
+      <p class="label-sm text-muted">Shot on Olympus mju-II, 35mm film</p>
+    </aside>
   </section>
 </main>
 
 <footer>
-  <span class="label-sm text-muted">Alix Abroad</span>
+  <a href="contact.html" class="back-home">Get in Touch</a>
 </footer>
 
 <script src="js/site.js" defer></script>
