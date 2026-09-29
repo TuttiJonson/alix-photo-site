@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  /* ---------- Theme toggle ---------- */
+  /* ---------- Theme toggle: switches the site between light and dark mode ---------- */
   function initTheme() {
     var btn = document.querySelector("[data-theme-toggle]");
     if (!btn) return;
@@ -31,7 +31,8 @@
     });
   }
 
-  /* ---------- Scroll progress (palette-cycling fixed gradient) ---------- */
+  /* ---------- Scroll progress: the colored bar on the left edge that
+     fills up to show how far down the page you've scrolled ---------- */
   function initScrollProgress() {
     var fill = document.querySelector(".scroll-progress__fill");
     if (!fill) return;
@@ -60,7 +61,8 @@
     update();
   }
 
-  /* ---------- Trip photo carousel: stage (big) + thumbnails (small) ---------- */
+  /* ---------- Trip photo carousel: the big photo + small clickable
+     thumbnails on each trip page ---------- */
   function initSliders() {
     var sliders = document.querySelectorAll("[data-slider]");
 
@@ -149,8 +151,8 @@
     });
   }
 
-  /* ---------- Custom cursor: thin trailing line, cycling through the
-     existing palette over time (not tied to mouse speed or scroll) ---------- */
+  /* ---------- Custom cursor: the colored line that follows your mouse
+     around the screen, replacing the normal pointer ---------- */
   function initCursorTrail() {
     // only on devices with a real pointer — a "custom cursor" is meaningless
     // on touch, and we don't want to fight native touch scrolling/tapping
@@ -258,6 +260,7 @@
     requestAnimationFrame(frame);
   }
 
+  /* ---------- Run everything once the page has loaded ---------- */
   document.addEventListener("DOMContentLoaded", function () {
     initTheme();
     initScrollProgress();
