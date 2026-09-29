@@ -571,6 +571,15 @@ footer {
   outline-offset: 2px;
 }
 
+/* the base border above is a fixed dark rgba, matching --bg almost exactly
+   in dark mode and disappearing against the field's own background —
+   swap to a light-based border so fields stay visible there too */
+:root[data-theme="dark"] .inquiry-form input,
+:root[data-theme="dark"] .inquiry-form select,
+:root[data-theme="dark"] .inquiry-form textarea {
+  border-color: rgba(248, 248, 245, 0.3);
+}
+
 .inquiry-form__submit {
   justify-self: start;
   margin-top: 4px;
