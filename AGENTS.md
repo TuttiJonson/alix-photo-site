@@ -72,11 +72,14 @@ same structure with `hong-kong`/`tokyo`/etc. and `trip--pink`/`trip--blue`/etc.
 swapped. When changing the trip template, changes must be applied to **all
 five** trip `.html` files by hand — there's no single place to edit once.
 
-Trip page intro paragraphs are marked with an
-`<!-- DRAFT COPY: replace with Alix's own words -->` comment — these are
-placeholder text, not Alix's real reflections. Don't remove that comment
-without replacing the copy with something actually supplied by her. Same idea
-for `[Add travel dates]` placeholders in the trip panels.
+Trip page intro paragraphs were originally AI-drafted and marked with a
+`<!-- DRAFT COPY: replace with Alix's own words -->` comment. Alix reviewed
+that copy in the client interview and liked it, so it's now kept as final
+content — the comment on each trip page was updated accordingly (see
+`<!-- AI-written copy: Alix reviewed... -->`). No need to replace this
+prose with something else unless she asks. The travel-dates placeholder
+(`[Add travel dates]`) was removed outright, per her request — trip panels
+no longer show a dates line at all.
 
 ## Images
 

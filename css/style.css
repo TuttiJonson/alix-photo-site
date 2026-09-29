@@ -577,17 +577,6 @@ footer {
   opacity: 0.8;
 }
 
-.contact-feature__direct {
-  margin-top: 24px;
-  font-size: 15px;
-  color: var(--ink);
-}
-
-.contact-feature__direct .label-sm {
-  display: block;
-  margin-top: 4px;
-}
-
 @media (max-width: 767px) {
   .contact-feature {
     padding: 24px 16px 48px;
@@ -822,8 +811,6 @@ footer {
 
   .trip-slider__arrow { width: 34px; height: 34px; font-size: 17px; }
 }
-
-.trip-editorial__date { margin: -8px 0 16px; }
 
 /* ===========================================================
    Scroll progress line — thin, fixed, cycles through the existing
