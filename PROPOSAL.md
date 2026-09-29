@@ -30,4 +30,12 @@ Need:
 
 
 ## Layout Plan
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/slides/DiWb5izXdFTuCmpPBKSwYr/Untitled?node-id=1-2&embed-host=share" allowfullscreen></iframe>
+
+Hand-drawn homepage sketch from the client interview — the puzzle-piece
+layout, colored decorative pieces, and photo tiles (Hong Kong, Mt Kinabalu,
+Tokyo, Seoul, Sydney) came directly from this:
+
+![Homepage layout sketch: a hand-drawn puzzle-piece grid labeled Alix Abroad, with About/Contact nav, colored scribble blocks, and city-named photo tiles for Hong Kong, Mt Kinabalu, Tokyo, Seoul, and Sydney](layout-sketch.jpg)
+
+The same layout was also mocked up in Figma for reference:
+[View the Figma mockup](https://www.figma.com/slides/DiWb5izXdFTuCmpPBKSwYr/Untitled?node-id=1-2)
