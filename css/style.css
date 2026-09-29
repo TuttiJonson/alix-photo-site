@@ -165,12 +165,26 @@ header nav {
 .site-logo {
   display: flex;
   align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .site-logo img {
   display: block;
   height: 36px;
   width: auto;
+}
+
+.site-logo-text {
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+  top: -2px;
 }
 
 .site-logo:hover,
@@ -198,6 +212,8 @@ header nav {
 
 @media (max-width: 767px) {
   .site-logo img { height: 28px; }
+  .site-logo { gap: 8px; }
+  .site-logo-text { font-size: 13px; }
 }
 
 /* ---------- Footer ---------- */
