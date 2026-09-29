@@ -360,6 +360,20 @@ footer {
 .piece--cream  { background: var(--cream); }
 .piece--brown  { background: var(--brown); color: var(--bg); }
 
+/* These five tiles inherit var(--ink) for their text, which is correctly
+   dark in light mode but flips to near-white in dark mode — unreadable on
+   light backgrounds like these. Pin their text to dark regardless of
+   theme (green/brown already avoid this since they use var(--bg), which
+   still lands on a readable color both ways). Reuses the same documented
+   #000 exception the ticker uses, not a new hardcoded color. */
+:root[data-theme="dark"] .piece--pink,
+:root[data-theme="dark"] .piece--yellow,
+:root[data-theme="dark"] .piece--blue,
+:root[data-theme="dark"] .piece--orange,
+:root[data-theme="dark"] .piece--cream {
+  color: #000;
+}
+
 /* explicit dissection: 6 cols x 4 rows. Colored decorative tiles are
    threaded between each pair of photos (rather than bunched into the
    final row/column) — see the matching HTML order in index.html. */
