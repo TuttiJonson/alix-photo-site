@@ -39,5 +39,11 @@ I wrote a more specific follow-up prompt and Claude Code produced commit **`feee
 
 My prompt asked Claude Code to check before committing, and it reported that:
 
-- the header container was already `display: flex; justify-content: space-between; padding: 0 28px`, so the logo sits flush
+- the header container was already `display: flex; justify-content: space-between; padding: 0 28px`, so the logo sits flush left and the nav links flush right with matching padding, and no layout change was needed
+- there was no stray `position: absolute`, oversized dimension or `z-index` on the logo or header image. The other hits in the stylesheet belong to unrelated components (puzzle tiles, trip hero, slider arrows, scroll progress, cursor canvas).
+- the header markup matches across all 9 pages
+
+I also checked `index.html` and `tokyo.html` in the browser at desktop and mobile widths. <!-- Only keep this sentence if you actually did. -->
+
+**Commits:** [`6b621e0`](../../commit/6b621e0) (AI output I didn't accept as-is) → [`feee172`](../../commit/feee172d2d1eaa79bf2659251611cb8503dfa453) (my correction)
 
