@@ -162,11 +162,20 @@ header nav {
   justify-content: space-between;
 }
 
-.site-title {
-  font-size: 15px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 600;
+.site-logo {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
+.site-logo:hover,
+.site-logo:focus-visible {
+  opacity: 0.7;
 }
 
 .nav-links {
@@ -185,6 +194,10 @@ header nav {
 .nav-links a:hover,
 .nav-links a:focus-visible {
   opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  .site-logo img { height: 28px; }
 }
 
 /* ---------- Footer ---------- */
