@@ -1,20 +1,43 @@
 # README 
 
-This is a website for my friend Alix that wanted to showcase her photo's from her time abroad. The purpose is to make her friends travel there as well. She wanted to focus first on aesthetics so that it looks more like a portfolio for her pictures as she wants to put her art forward. 
+This is a website for my friend Alix that wanted to showcase her photo's from her time abroad. The purpose is to make her friends travel there as well. She wanted to focus first on aesthetics so that it looks more like a portfolio for her pictures as she wants to put her art forward. She also wants to drive movement towards her platform and see if anyone would have an interest in actually purchasing the images that she created, or even interested in her taking pictures during some trips 
 
-# the ticker bar fix
-## What did it give me the first time?
+live website URL: tuttijonson.github.io/alix-photo-site/
 
-The first pass at the scrolling city ticker (Hong Kong • Seoul • Tokyo • Sydney • Mount Kinabalu) worked technically — it was a single track with the whole list duplicated back-to-back, sliding with `translateX(0)` → `translateX(-50%)`. On paper that's a normal marquee trick. In practice it looked off: because both copies were glued together in one long strip, it read like the names were repeating/stuttering instead of cleanly cycling, and it didn't loop the way a bar should feel.
+## AI Output I Did Not Accept As-Is
 
-## What did I change?
+### What the AI gave me
 
-I ripped out the single-track version and rebuilt it as two separate `.ticker-group` blocks sitting side by side inside `.ticker`, each one holding every city exactly once (`css/style.css` lines 85–134, markup in `index.html` lines 15–31 and the same block in every other page). Each group is `min-width: 100%` and `justify-content: space-around`, and both animate with the *same* keyframes at the *same* time — `translateX(0)` to `translateX(-100%)`. Because they start in sync, group 1 slides fully off the left edge at the exact moment group 2 (already queued up right behind it) slides into the spot it just left. That's what makes it loop seamlessly instead of stutter-repeating.
+I asked Claude Code to fix my header logo. On `tokyo.html` the globe image rendered at full size and covered the header, and on `index.html` and `about.html` it didn't appear at all.
 
-I also had to add one small thing after eyeballing it again: a bullet dot between "Mount Kinabalu" (last item in a group) and "Hong Kong" (first item of the next group), because that seam is visible mid-scroll and without the dot it read as one squished word. That's the `<span aria-hidden="true"> • </span>` tacked onto the end of the Mount Kinabalu link in both groups.
+Claude Code produced commit **`6b621e0`** (`git show 6b621e0`). It:
 
-Also kept along the way: DotGothic16 font, pure black text, pause-on-hover, and `prefers-reduced-motion` support — none of that changed, just the loop mechanics underneath it.
+- added `favicon.png` and linked it in the `<head>` of all 9 HTML pages
+- replaced the header text link with an image-only logo, on every page:
 
-## How did I know it needed changing?
+```diff
+-<a href="index.html" class="site-title">Alix Abroad</a>
++<a href="index.html" class="site-logo"><img src="favicon.png" alt="Alix Abroad — home"></a>
+```
 
-Because you told me directly — you said the ticker "isn't looping continuously and repeats the names," and gave me the exact spec for the fix (two `.ticker-group` elements, `flex-shrink: 0`, `min-width: 100%`, `justify-content: space-around`, animate both `0` → `-100%`). That's the whole signal: you looked at what shipped, it didn't match the vision you had for it, and you said so. That feedback is why the change happened and why it's sitting in this commit instead of the first draft.
+- replaced `.site-title` in `css/style.css` with `.site-logo` rules that cap the image at 36px tall (28px under 767px) and add a hover/focus fade
+
+That fixed the oversized globe and made the header identical on every page.
+
+### What I changed, and how I knew
+
+Reading the diff and checking the pages in the browser, I saw that the commit had **deleted the "Alix Abroad" text**. My design needed the logo *next to* the text, as one clickable link home, with the text sitting slightly above the logo's center. The commit's red line (`-<a ... class="site-title">Alix Abroad</a>`) showed the wordmark was gone, so I didn't accept it.
+
+I wrote a more specific follow-up prompt and Claude Code produced commit **`feee172`** (`git show feee172`). It:
+
+- wraps the image and a `<span class="site-logo-text">Alix Abroad</span>` in the same `<a class="site-logo">` on all 9 pages
+- changes the image `alt` to empty, since the visible text now names the link
+- sets `.site-logo` to `display: flex; align-items: center; gap: 10px; flex-shrink: 0`
+- restores the old title styling on `.site-logo-text` and adds `white-space: nowrap; position: relative; top: -2px` to nudge the text up
+
+### How I verified it
+
+My prompt asked Claude Code to check before committing, and it reported that:
+
+- the header container was already `display: flex; justify-content: space-between; padding: 0 28px`, so the logo sits flush
+
