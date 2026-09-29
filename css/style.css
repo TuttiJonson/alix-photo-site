@@ -203,6 +203,7 @@ header nav {
   text-transform: uppercase;
   font-weight: 500;
   padding: 4px 2px;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -212,8 +213,13 @@ header nav {
 
 @media (max-width: 767px) {
   .site-logo img { height: 28px; }
-  .site-logo { gap: 8px; }
-  .site-logo-text { font-size: 13px; }
+  .site-logo { gap: 6px; }
+  .site-logo-text { font-size: 11px; }
+  /* trip pages add a theme-toggle button into .nav-links, which the base
+     28px gap doesn't leave room for alongside the logo+text at narrow
+     widths — tighten here (mobile only) rather than let anything wrap */
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 11px; }
 }
 
 /* ---------- Footer ---------- */
