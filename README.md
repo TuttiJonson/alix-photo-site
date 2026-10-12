@@ -2,7 +2,7 @@
 
 This is a website for my friend Alix that wanted to showcase her photo's from her time abroad. The purpose is to make her friends travel there as well. She wanted to focus first on aesthetics so that it looks more like a portfolio for her pictures as she wants to put her art forward. She also wants to drive movement towards her platform and see if anyone would have an interest in actually purchasing the images that she created, or even interested in her taking pictures during some trips 
 
-live website URL: tuttijonson.github.io/alix-photo-site/
+Live website: [https://tuttijonson.github.io/alix-photo-site/]
 
 ## AI Output I Did Not Accept As-Is
 

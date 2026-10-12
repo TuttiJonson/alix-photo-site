@@ -6,7 +6,7 @@ Guidance for AI coding agents (and humans) working in this repository.
 
 **Alix Abroad** — a static photography portfolio site for one person's travel
 photos, deployed via GitHub Pages at the repo's project URL
-(`tuttijonson.github.io/mini-project/`). Read `PRD.md` and `PROPOSAL.md` first —
+(`tuttijonson.github.io/alix-photo-site/`). Read `PRD.md` and `PROPOSAL.md` first —
 they're the source of truth for scope, design direction, and acceptance
 criteria. This file only covers *how the code is built*, not what it should do.
 

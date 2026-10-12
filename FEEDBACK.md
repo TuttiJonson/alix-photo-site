@@ -12,7 +12,7 @@ What is it: When you click on a photo, it shows it large over a dim page so you 
 
 The AI agent offered five ideas tied to Alix's goals (print shop, booking/hire page, photo lightbox, captions, more destinations); I picked the photo lightbox because when someone really likes a photo they should see it fill the whole screen with her other photos waiting behind it in a carousel. In addition to that, that photo lightbox should be truly focused on the pixels. One comment I got during the showcase was that I didn't pay attention to the actual quality of the picture, and that's truly important when selling pictures. It's about the whole marketing and building more attention around the actual content of the website, which is her photos. Status: not built yet, so nothing was stopped.
 
-## Second conversation — October 12, 2026
+## Second conversation Thursday 1st October 
 
 Talked with Alix over WhatsApp after she looked through the live site.
 

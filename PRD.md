@@ -257,3 +257,13 @@ The first version is ready for approval when:
 - The site works on desktop and mobile.
 - No analytics, lightbox, captions, LinkedIn link, or CMS is present.
 - The site is publicly deployed through the project's GitHub Pages URL by the end of the week.
+
+## 16. Later
+
+Features that are not built yet, in the order Alix ranked them. None of these are part of the first version (see Non-Goals and Acceptance Criteria above).
+
+1. **Photo lightbox.** Click a photo and see it big, filling the screen, the way you'd hold a print up to the light. Alix shoots on a disposable camera, so every frame is a little bit of luck and a little bit of memory, and she wants people to be able to slow down and really look at each one.
+2. **More destinations.** A new trip page for each place Alix goes next. The site started with five trips, and she wants the puzzle to keep growing as her travels do, so it always feels like a living scrapbook and not a finished project.
+3. **Print shop / "buy this photo" link.** A link on each photo so a friend who loves a shot from Hong Kong or Sydney can take it home as a print. This is the first step toward Alix's goal of seeing whether anyone wants to buy her images.
+
+
